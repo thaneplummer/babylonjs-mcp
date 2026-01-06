@@ -1,0 +1,53 @@
+{
+  "name": "babylon-mcp",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/mcp/index.js",
+    "dev": "tsx watch --env-file=.env src/mcp/index.ts",
+    "clean": "rm -rf dist",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "alpine:setup": "sh scripts/alpine-setup.sh",
+    "clone:repos": "tsx scripts/clone-repos.ts",
+    "index:docs": "tsx scripts/index-docs.ts",
+    "index:api": "tsx scripts/index-api.ts",
+    "index:source": "tsx scripts/index-source.ts",
+    "index:all": "npm run index:docs && npm run index:api && npm run index:source",
+    "index-docs": "npm run index:docs",
+    "index-api": "npm run index:api",
+    "index-source": "npm run index:source"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@lancedb/lancedb": "^0.22.3",
+    "@modelcontextprotocol/sdk": "^1.22.0",
+    "@xenova/transformers": "^2.17.2",
+    "express": "^5.1.0",
+    "gray-matter": "^4.0.3",
+    "newrelic": "^13.6.6",
+    "simple-git": "^3.30.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "@types/node": "^24.10.1",
+    "@types/supertest": "^6.0.3",
+    "@vitest/coverage-v8": "^4.0.13",
+    "nodemon": "^3.1.11",
+    "supertest": "^7.1.4",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
+    "typedoc": "^0.28.14",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.13"
+  }
+}
